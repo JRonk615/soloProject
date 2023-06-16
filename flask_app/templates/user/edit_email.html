@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-warning">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hello, {{user.user_name}}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex align-items-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button class=" btn m-4">
+                            <a class="nav-link" href="/user/home">Home</a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class=" btn m-4">
+                            <a class="nav-link" href='/user/info'>User Info</a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class=" btn m-4">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-lg col-12 bg-dark d-flex">
+        <div class="container-sm col-4 bg-dark text-light ">
+            <h1 class="text-center">Edit User Info</h1>
+            
+            <form action="/update/email/{{user.id}}" method="post">
+                {% with messages = get_flashed_messages(category_filter=['email']) %}     <!-- declare a variable called messages -->
+                    {% if messages %}                            <!-- check if there are any messages -->
+                        {% for message in messages %}            <!-- loop through the messages -->
+                            <p class="text-danger">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Email" name = "email" value="{{user.email}}">
+                </div>
+                <input type="submit" value="Update" class="col-12 btn btn-light justify-content-center mb-4">
+            </form>
+        </div>
