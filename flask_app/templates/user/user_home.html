@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Bruno Ace SC' rel='stylesheet'>
     <link href="/flask_app/static/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Document</title>
@@ -12,7 +13,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-success border-3">
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="#" style="font-family:fantasy; text-shadow: 2px 2px 8px green" >WELCOME: //{{user.user_name}}//</a>
+            <a class="navbar-brand" href="#" style="font-family:Bruno Ace SC; text-shadow: 2px 2px 8px green; font-size:100%;" >WELCOME: //{{user.user_name}}//</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,59 +23,56 @@
 
                     <li class="nav-item">
                         <button class=" btn m-4">
-                            <a class="nav-link" href='/user/info' style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green">User Info</a>
+                            <a class="nav-link" href='/user/info' style="font-family:Bruno Ace SC; text-shadow: 2px 2px 8px green">User Info</a>
                         </button>
                     </li>
 
                     {% if wallet.wallet.wallet_user_id == user.id %}
                     <li class="nav-item">
                         <button class=" btn m-4">
-                            <a class="nav-link" href='/view/wallet/{{wallet.wallet.id}}' style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green">+ Wallet</a>
+                            <a class="nav-link" href='/view/wallet/{{wallet.wallet.id}}' style="font-family:Bruno Ace SC; text-shadow: 2px 2px 8px green">+ Wallet</a>
                         </button>
                     </li>
                     {% else %}
                     <li class="nav-item">
                         <button class=" btn m-4">
-                            <a class="nav-link" href='/create/wallet' style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green">+ Create Wallet</a>
+                            <a class="nav-link" href='/create/wallet' style="font-family:'Bruno Ace SC'; text-shadow: 2px 2px 8px green">+ Create Wallet</a>
                         </button>
                     </li>
                     {% endif %}
 
                     <li class="nav-item">
                         <button class=" btn m-4">
-                            <a class="nav-link" href="/exchange/{{wallet.wallet.id}}" style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green">Exchange</a>
+                            <a class="nav-link" href="/exchange/{{wallet.wallet.id}}" style="font-family:'Bruno Ace SC'; text-shadow: 2px 2px 8px green">Exchange</a>
                         </button>
                     </li>
                     
                     <li class="nav-item">
-                        <button class=" btn m-4">
-                            <a class="nav-link" href="/portal" style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green">Portal</a>
-                        </button>
-                    </li>
-
-                    <li class="nav-item">
-                        <button class=" btn m-4">
-                            <a class="nav-link" href="/logout" style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green">Logout</a>
+                        <button class=" btn m-4 me-4">
+                            <a class="nav-link" href="/portal" style="font-family:'Bruno Ace SC'; text-shadow: 2px 2px 8px green">Portal</a>
                         </button>
                     </li>
                     
                 </ul>
             </div>
         </div>
-
-        <div class="position-absolute top-50 start-50 translate-middle text-center justify-content-center ms-2">
-            <h1 style="font-family:fantasy; font-size:350%; text-shadow: 2px 2px 8px green">DGCoin<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
+        
+        <div class="position-absolute top-50 start-50 translate-middle text-center justify-content-center ms-4">
+            <h1 style="font-family:Bruno Ace SC; font-size:350%; text-shadow: 2px 2px 8px green" class="text-center">DGCoin<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
                 <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z"/>
             </svg></h1>
-            <p style="font-family:'Courier New', Courier, monospace; font-size:75%;">Digital Gaming Coin</p>
+            <p style="font-family:Bruno Ace SC; font-size:75%;">Digital Gaming Coin</p>
         </div>
-
+        
+        <button class=" btn m-4">
+            <a class="nav-link" href="/logout" style="font-family:'Bruno Ace SC'; text-shadow: 2px 2px 8px green">Logout</a>
+        </button>
     </nav>
     <div class="container-xl d-flex justify-content-start">
 
         <div class="col-3 bg-dark mt-4 border border-success border-2 overflow-auto" style="box-shadow: 0px 0px 10px 2px aliceblue;" >
             <div class="col-12 text-light text-center">
-                <h3 style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px aliceblue">
+                <h3 style="font-family:'Bruno Ace SC'; text-shadow: 2px 2px 8px aliceblue">
                     Top XP Earners
                 </h3>
             </div>
@@ -123,14 +121,14 @@
                 <div class="card col-12 ms-4 mt-4 mb-4 border border-success border-2 bg-dark text-light " style="box-shadow: 0px 0px 10px 2px aliceblue;">
 
                     <div class="card-header text-center justify-content-center">
-                        <h1 style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green">The Future of VC</h1>
+                        <h1 style="font-family:'Bruno Ace SC'; text-shadow: 2px 2px 8px green">The Future of VC</h1>
                     </div> 
 
                     <div class="card-body justify-content-center">
-                                <h5 class="card-title text-center" style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green">
+                                <h5 class="card-title text-center" style="font-family:Bruno Ace SC; text-shadow: 2px 2px 8px green">
                                     Changing The Relationship Between Work and Play 
                                 </h5>
-                                <p class="card-text text-center" style="font-family:'Courier New', Courier, monospace;">
+                                <p class="card-text text-center" style="font-family:Bruno Ace SC">
                                     
                                     With the gaming world only growing larger every year, wouldnt it be nice to put all that XP earned across all games to 
                                     an amazing use? Enter DGCoin. With a goal to combine all major Virtual Currencies into a Set of coins earned by YOU the gamer. 
@@ -140,11 +138,11 @@
 
                                 {% if wallet.wallet.wallet_user_id == user.id %}
                                     <button class=" btn m-4 text-light text-center" style="font-family:'Courier New', Courier, monospace; font-size:150%;">
-                                        <a class="nav-link" href='/view/wallet/{{wallet.wallet.id}}' style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green">+ Wallet</a>
+                                        <a class="nav-link" href='/view/wallet/{{wallet.wallet.id}}' style="font-family:Bruno Ace SC; text-shadow: 2px 2px 8px green">+ Wallet</a>
                                     </button>
                                 {% else %}
                                     <button class=" btn m-4 text-success text-center">
-                                        <a class="nav-link" href='/create/wallet'>+ Create Wallet</a>
+                                        <a class="nav-link" href='/create/wallet' style="font-family:Bruno Ace SC; text-shadow: 2px 2px 8px green">+ Create Wallet</a>
                                     </button>
                                 {% endif %}
 
@@ -155,7 +153,7 @@
 
                     <p>
                         <button class="btn btn-dark m-4 text-light " type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample" style="box-shadow: 0px 0px 10px 2px aliceblue;">
-                            <h5 style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green; font-size:175%;">
+                            <h5 style="font-family:Bruno Ace SC; text-shadow: 2px 2px 8px green; font-size:150%;">
                                 +XPCoin
                             </h5>
                         </button>
@@ -164,14 +162,14 @@
                     <div style="min-height: 120px;">
                         <div class="collapse collapse-horizontal" id="collapseWidthExample1">
                             <div class="card card-body bg-dark text-light" style="width: 300px;">
-                                <p style="font-family:'Courier New', Courier, monospace; font-size:85%;">XPCoin is the tier-1 coin of DGC. Allowing for the initial swap from XP earned.</p>
+                                <p style="font-family:Bruno Ace SC; font-size:85%;">XPCoin is the tier-1 coin of DGC. Allowing for the initial swap from XP earned.</p>
                             </div>
                         </div>
                     </div>
 
                     <p>
                         <button class="btn btn-dark m-4 text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample2" aria-expanded="false" aria-controls="collapseWidthExample" style="box-shadow: 0px 0px 10px 2px aliceblue;">
-                            <h5 style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green; font-size:175%;">
+                            <h5 style="font-family:Bruno Ace SC; text-shadow: 2px 2px 8px green; font-size:150%;">
                                 +LVLCoin
                             </h5>
                         </button>
@@ -180,14 +178,14 @@
                     <div style="min-height: 120px;">
                         <div class="collapse collapse-horizontal" id="collapseWidthExample2">
                             <div class="card card-body bg-dark text-light" style="width: 300px;">
-                                <p style="font-family:'Courier New', Courier, monospace; font-size:85%;">LVLCoin is the tier-2 coin of DGC. The Leveled up big brother. Allowing for higher base XP multipliers based on current holdings</p>
+                                <p style="font-family:Bruno Ace SC; font-size:85%;">LVLCoin is the tier-2 coin of DGC. The Leveled up big brother. Allowing for higher base XP multipliers based on current holdings</p>
                             </div>
                         </div>
                     </div>
 
                     <p>
                         <button class="btn btn-dark m-4 text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample3" aria-expanded="false" aria-controls="collapseWidthExample" style="box-shadow: 0px 0px 10px 2px aliceblue;">
-                            <h5 style="font-family:'Courier New', Courier, monospace; text-shadow: 2px 2px 8px green; font-size:175%;">
+                            <h5 style="font-family:Bruno Ace SC; text-shadow: 2px 2px 8px green; font-size:150%;">
                                 +DGCoin
                             </h5>
                         </button>
@@ -196,7 +194,7 @@
                     <div style="min-height: 120px;">
                         <div class="collapse collapse-horizontal" id="collapseWidthExample3">
                             <div class="card card-body bg-dark text-light" style="width: 300px;">
-                                <p style="font-family:'Courier New', Courier, monospace; font-size:85%;">DGCoin is the Top Dawg. Requiring the most amount of XP to obtain. Limited to a capped amount, offers the most perks. Max XP multipliers, access to items only obtainable with a DGCoin </p>
+                                <p style="font-family:Bruno Ace SC; font-size:85%;">DGCoin is the Top Dawg. Requiring the most amount of XP to obtain. Limited to a capped amount, offers the most perks. Max XP multipliers, access to items only obtainable with a DGCoin </p>
                             </div>
                         </div>
                     </div>
